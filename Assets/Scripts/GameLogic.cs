@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour {
 	protected ScreenType lvlToLoad = ScreenType.MainMenu;
 	protected int lastHighscore;
 	protected List<HighscoreRecord> scoreRecords = new List<HighscoreRecord>();
+	protected int difficultyLvl = 0;
 
 	void Awake()
 	{
@@ -23,6 +24,7 @@ public class GameLogic : MonoBehaviour {
 		{
 			PackmanLogic packmanLogic = GameObject.FindObjectOfType<PackmanLogic>();
 			packmanLogic.gameOver += OnGameOver;
+			packmanLogic.Lives = 3 - difficultyLvl;
 		}
 		if (lvlToLoad == ScreenType.Highscore) 
 		{
@@ -39,8 +41,9 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 	
-	public void StartGame()
+	public void StartGame(int difficultyLvl)
 	{
+		this.difficultyLvl = difficultyLvl;
 		SwitchScreen(ScreenType.Game);
 	}
 
@@ -81,6 +84,6 @@ public class GameLogic : MonoBehaviour {
 
 	protected void OnHighscoreReplayClick(object sender, System.EventArgs e)
 	{
-		StartGame();
+		StartGame(difficultyLvl);
 	}
 }

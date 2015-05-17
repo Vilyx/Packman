@@ -84,7 +84,6 @@ public class PackmanLogic : MonoBehaviour {
 		playerController.moveSpeed = 6;
 
 		Points = 0;
-		Lives = 1;
 	}
 	
 	void Update () {

@@ -4,9 +4,11 @@ using System;
 
 public class Player : ControllableCharacter {
 
+	public SoundsGameScreen sounds;
 	public event EventHandler foodEaten;
 	public event EventHandler ghostCollide;
 	public delegate void EventHandler(object sender, EventArgs e);
+	protected float lastStopTime = 0;
 
 	void Start () {
 	

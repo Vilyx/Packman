@@ -24,6 +24,7 @@ public class ObjectToStoreStringUtil
 		}
 		return higscoreString;
 	}
+
 	public static List<HighscoreRecord> StringToHighscore(string scoreString)
 	{
 		List<HighscoreRecord> scoreRecords = new List<HighscoreRecord>();
@@ -38,4 +39,5 @@ public class ObjectToStoreStringUtil
 		}
 		return scoreRecords;
 	}
+
 }
